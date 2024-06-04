@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair Job Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Repair Job Form</h1>
+        <form id="repairForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="number">Number:</label>
+                <input type="text" id="number" name="number" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Device:</label>
+                <div class="device-buttons">
+                    <button type="button" class="device-button" data-device="computer">
+                        <i class="fas fa-laptop"></i> Computer
+                    </button>
+                    <button type="button" class="device-button" data-device="mobile">
+                        <i class="fas fa-mobile-alt"></i> Mobile
+                    </button>
+                    <button type="button" class="device-button" data-device="printer">
+                        <i class="fas fa-print"></i> Printer
+                    </button>
+                    <button type="button" class="device-button" data-device="other">
+                        <i class="fas fa-ellipsis-h"></i> Other
+                    </button>
+                </div>
+                <input type="hidden" id="device" name="device" required>
+            </div>
+
+            <div id="subDeviceContainer" class="form-group" style="display: none;">
+                <label for="subDevice">Sub Device:</label>
+                <div id="subDeviceCheckboxes"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="fault">Fault:</label>
+                <input type="text" id="fault" name="fault" required list="faults">
+                <datalist id="faults">
+                    <option value="Display Problem">
+                    <option value="Charging Problem">
+                    <option value="Battery Problem">
+                    <option value="OS Problem">
+                    <option value="Upgrade">
+                </datalist>
+            </div>
+
+            <div class="fault-buttons">
+                <button type="button" class="fault-button" data-fault="Display Problem">Display Problem</button>
+                <button type="button" class="fault-button" data-fault="Charging Problem">Charging Problem</button>
+                <button type="button" class="fault-button" data-fault="Battery Problem">Battery Problem</button>
+                <button type="button" class="fault-button" data-fault="OS Problem">OS Problem</button>
+                <button type="button" class="fault-button" data-fault="Upgrade">Upgrade</button>
+            </div>
+            
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
